@@ -1,0 +1,8 @@
+{{- if .Get 1 -}}
+    <span class="spoiler bulr">{{- .Get 0 | markdownify -}}</span>
+{{- else -}}
+    <span
+        class="spoiler"
+        >{{- .Get 0 | markdownify -}}</span
+    >
+{{- end -}}

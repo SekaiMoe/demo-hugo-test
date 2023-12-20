@@ -1,0 +1,35 @@
+{{ $post := .post  }}
+{{ $url := .post.RelPermalink}}
+{{ $title := .post.Title | default (T "post.untitled")}}
+{{ $cover := partial "helper/cover.html" (dict "page" $post "global" .context) }}
+{{ $summary := .post.Summary | plainify | truncate 300  }}
+{{ $tags := .post.Params.tags  }}
+
+<article class="item">
+	<div class="cover">
+		<a href="{{- $url -}}" itemprop="url" title="{{- $title -}}">
+		<img data-src="{{- $cover -}}"></a>
+	</div>
+	<div class="info">
+		{{- partial "components/postmeta.html" (dict "context" .post "full" false) -}}
+		<h3>
+			<a href="{{- $url -}}" itemprop="url" title="{{- $title -}}">
+				{{- $title -}}
+			</a>
+		</h3>
+		<div class="excerpt">
+			{{- $summary -}}
+		</div>
+		<div class="meta footer">
+			{{- range $tags -}}
+			<span>
+			<a href="/tags/{{- . | urlize -}}" itemprops="url" title={{- . -}}>
+				<i class="ic i-tag"></i>
+				{{- . -}}
+			</a>
+			</span>
+			{{- end -}}
+		</div>
+		<a href="{{- $url -}}" itemprop="url" title="{{- $title -}}" class="btn">more...</a>
+	</div>
+</article>

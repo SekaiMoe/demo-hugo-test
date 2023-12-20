@@ -1,0 +1,38 @@
+{{- $avatar := partial "helper/avatar.html" . -}}
+<article itemscope itemtype="http://schema.org/Article" class="post block" lang="{{- .Language -}}">
+	<link itemprop="mainEntityOfPage" href="{{- .Permalink -}}">
+
+	<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+		<meta itemprop="image" content="{{- $avatar -}}">
+		<meta itemprop="name" content="{{- .Site.Author.name -}}">
+		<meta itemprop="description" content="{{- print .Site.Params.subtitle ", " .Site.Params.description -}}">
+	</span>
+
+	<span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+		<meta itemprop="name" content="{{- .Title -}}">
+	</span>
+
+	<div class="body md" itemprop="articleBody">
+		{{ .Content }}
+
+		{{- if .Params.tags -}}
+		<div class="tags">
+			{{- range .Params.tags -}}
+			<a href="{{- "/tags/" | relLangURL -}}{{- . | urlize -}}" rel="tag">
+				<i class="ic i-tag"></i> {{- . -}}
+			</a>
+			{{- end -}}
+		</div>
+		{{- end -}}
+	</div>
+
+	<footer>
+
+		{{- partial "article/footer.html" . -}}
+		{{- if .Site.Params.reward.enable -}}
+			{{- partial "article/reward.html" . -}}
+		{{- end -}}
+
+		{{- partial "article/copyright.html" . -}}
+	</footer>
+</article>

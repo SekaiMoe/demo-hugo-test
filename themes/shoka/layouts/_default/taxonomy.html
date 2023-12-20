@@ -1,0 +1,36 @@
+{{- define "header" -}}
+  <h1 itemprop="name headline">
+    {{- if eq .Data.Plural "tags" -}}
+      {{- T "title.tag_in" (dict "s" .Title) -}}
+    {{ else }}
+      {{- T "title.all" -}}
+      {{- T "title.category" -}}
+    {{- end -}}
+  </h1>
+{{- end -}}
+
+{{- define "main" -}}
+  <div class="collapse wrap">
+    {{- if eq .Data.Plural "tags" -}}
+      <h2 class="item header">
+        <a href="/tags/">{{- T "title.all" -}}</a>
+        <small>/</small>
+        {{ .Title }}
+        <small>{{- T "title.tag" -}}</small>
+      </h2>
+    {{- else -}}
+    {{- end -}}
+    <div>
+      {{- $paginator := .Paginate .Pages -}}
+      {{- range $paginator.Pages -}}
+        {{- partial "article-list/article.html" . -}}
+      {{- end -}}
+    </div>
+
+    {{- partial "components/pagination.html" $paginator -}}
+  </div>
+{{- end -}}
+
+{{- define "sidebar" -}}
+  {{- partial "components/sidebar.html" (dict "context" . "display_toc" true "paginator" nil) -}}
+{{- end -}}

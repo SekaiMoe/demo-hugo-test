@@ -1,0 +1,45 @@
+{{- $l_text := print "<i class='ic i-creative-commons'></i>"  .Site.Params.license.name -}}
+<script data-config type="text/javascript">
+ var LOCAL = {
+	 path: {{- strings.TrimPrefix "/" .RelPermalink -}},
+	 favicon: {
+		 show: "{{- T "favicon.show" -}}",
+		 hide: "{{- T "favicon.hide" -}}" 
+	 },
+	 search: {
+		 placeholder: "{{- T "search.placeholder" -}}",
+		 empty: "{{- T "search.empty" -}}",
+		 stats: "{{- T "search.stats" -}}"
+	 },
+     {{- if .Site.Params.widgets.recent_comments | or (ne .Params.comment false) -}}
+     waline: {{- .Params.waline | default true -}},
+     {{- end -}}
+	 {{- if .Site.Params.chart -}}
+	 chart: true,
+	 {{- end -}}
+	 {{- if .Site.Params.math -}}
+	 copy_tex: true,
+	 katex: true,
+	 {{- end -}}
+	 {{- if .Site.Params.mermaid -}}
+	 mermaid: true,
+	 {{- end -}}
+     {{- if .Site.Params.fancybox -}}
+	 fancybox: true,
+     {{- end -}}
+	 copyright: {{- T "tips.copyright" (dict "s" $l_text) -}},
+     quiz: {
+         choice: {{- T "quiz.choice" -}},
+         multiple: {{- T "quiz.multiple" -}},
+         true_false: {{- T "quiz.true_false" -}},
+         essay: {{- T "quiz.essay" -}},
+         gap_fill: {{- T "quiz.gap_fill" -}},
+         mistake: {{- T "quiz.mistake" -}},
+
+     },
+	 ignores: [
+		 function (uri) { return uri.includes("#") },
+		 function (uri) { return new RegExp(LOCAL.path + "$").test(uri) }
+	 ],
+ }
+</script>

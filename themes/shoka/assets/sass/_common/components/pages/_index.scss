@@ -1,0 +1,56 @@
+// Page specific styles
+
+@import 'home';
+@import 'collapse';
+@import 'tag-cloud';
+
+.page {
+  .notfound {
+    width: 18.75rem;
+    height: 22.625rem;
+    background: url("../images/404.png") no-repeat center bottom;
+    text-align: center;
+    margin: 6.25rem auto;
+  }
+
+  .anchor::before {
+    @include font-family-icons;
+    color: var(--grey-4);
+    position: absolute;
+    left: -1.5625rem;
+    margin-top: .25rem;
+    visibility: visible;
+
+    @include mobile-small {
+      left: -0.1875rem;
+    }
+  }
+
+  .body h1 .anchor::before {
+    content: "\e695";
+    font-size: $font-size-small;
+    margin-top: .15rem;
+    color: pink;
+    left: -1.875rem;
+    animation: rotate 6s linear infinite;
+
+    @include mobile-small {
+      left: -0.3125rem;
+    }
+
+  }
+
+  .body h2 .anchor::before {
+    content: "\f017";
+    font-size: $font-size-smaller;
+    color: var(--color-pink);
+    animation: beat 1.33s ease-in-out infinite;
+  }
+
+  .body h3 .anchor::before {
+    content: "\f0d4";
+    font-size: $font-size-smallest;
+    color: var(--color-orange);
+    animation: flash 6s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+  }
+}

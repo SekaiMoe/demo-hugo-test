@@ -1,0 +1,27 @@
+<!-- Nested / Iteration / Recursion -->
+{{- $.Scratch.Delete "sections" -}}
+{{- $.Scratch.Delete "pages" -}}
+{{- if os.FileExists "content/posts" -}}
+{{- template "treeSections" (dict "$" $ "path" (printf `./content/posts`)) -}}
+{{- else -}}
+{{- $.Scratch.Add "sections" slice -}}
+{{- $.Scratch.Add "pages" slice -}}
+{{- end -}}
+
+{{- define "treeSections" -}}
+  {{- $ := index . "$" -}}
+  {{- $path := .path -}}
+  {{- range (readDir $path) -}}
+    {{- $fileName := .Name -}}
+    {{- if .IsDir -}}
+      {{- $pagePath := strings.TrimPrefix "./content" (printf `%s/%s` $path $fileName) -}}
+      {{- with $.Site.GetPage $pagePath -}}
+        {{- if  eq .Kind "section" -}}
+          {{- $.Scratch.Add "sections" (slice $fileName) -}}
+          {{- $.Scratch.Add "pages" (slice $pagePath) -}}
+        {{- end -}}
+      {{- end -}}
+      {{- template "treeSections" (dict "$" $ "path" (printf `%s/%s` $path $fileName)) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

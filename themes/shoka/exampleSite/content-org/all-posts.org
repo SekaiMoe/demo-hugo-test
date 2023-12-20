@@ -1,0 +1,343 @@
+#+TAGS: work(w)  tennisclub(t) @other(o) @program(p) @hugo(h)
+#+hugo_base_dir: ../
+#+hugo_front_matter_format: yaml
+#+hugo_auto_set_lastmod: t
+#+author: birdgg
+
+
+* DONE 排版测试 :work:@other:
+CLOSED: [2022-07-12 Tue 11:58]
+:PROPERTIES:
+:EXPORT_FILE_NAME: typo-test
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series '(start)
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :summary 中文排版测试
+:EXPORT_HUGO_SECTION: posts/other
+:END:
+** 中文文章排版实例：论语学而篇第一
+*作者：* 孔子（ 前 551 年 9 月 28 日－前 479 年 4 月 11 日 ）
+*** 原文
+
+子曰：_「学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知，而不愠，不亦君子乎？」_
+
+*** 译文
+
+孔子说：「学了又时常温习和练习，不是很愉快吗？有志同道合的人从远方来, *inline code* 不是很令人高兴的吗？人家不了解我，我也不怨恨、恼怒，不也是一个有德的君子吗？」
+
+*** 评析
+
+宋代著名学者朱熹对此章评价极高，说它是 **「入道之门，积德之基」** 。本章这三句话是人们非常熟悉的。历来的解释都是：学了以后，又时常温习和练习，不也高兴吗等等。三句话，一句一个意思，前后句子也没有什么连贯性。但也有人认为这样解释不符合原义，指出这里的「学」不是指学习，而是指学说或主张；~~「时」不能解为时常，而是时代或社会的意思~~，「习」不是温习，而是使用，引申为采用。而且，这三句话不是孤立的，而是前后相互连贯的。这三句的意思是：自己的学说，要是被社会采用了，那就太高兴了；退一步说，要是没有被社会所采用，可是很多朋友赞同我的学说，纷纷到我这里来讨论问题，我也感到快乐；再退一步说，即使社会不采用，人们也不理解我，我也不怨恨，这样做，不也就是君子吗？（见[《齐鲁学刊》][[https://baidu.com][link]]1986 年第 6 期文）这种解释可以`自圆其说`，而且也有一定的道理，供读者在理解本章内容时参考。
+
+此外，在对「[[https://baike.baidu.com/item/%E4%BA%BA%E4%B8%8D%E7%9F%A5%E8%80%8C%E4%B8%8D%E6%84%A0%EF%BC%8C%E4%B8%8D%E4%BA%A6%E5%90%9B%E5%AD%90%E4%B9%8E/2867323][人不知，而不愠]]」一句的解释中，也有人认为，「人不知」的后面没有宾语，人家不知道什么呢？当时因为孔子有说话的特定环境，他不需要说出知道什么，别人就可以理解了，却给后人留下一个谜。有人说，这一句是接上一句说的，从远方来的朋友向我求教，我告诉他，他还不懂，我却不怨恨。这样，「人不知」就是「人家不知道我所讲述的」了。这样的解释似乎有些牵强。
+
+总之，本章提出以学习为乐事，做到人不知而不愠，反映出孔子学而不厌、诲人不倦、注重修养、严格要求自己的主张。这些思想主张在《论语》书中多处可见，有助于对第一章内容的深入了解。
+
+***  表格
+| wreslter | origin | Finisher |
+|----------+--------+----------|
+| Bret "The Hitman" Hart  | Calgary, AB  | Sharpshooter       |
+| Stone Cold Steve Austin | Austin, TX   | Stone Cold Stunner |
+| Randy Savage            | Sarasota, FL | Elbow Drop         |
+| Vader                   | Boulder, CO  | Vader Bomb         |
+| Razor Ramon             | Chuluota, FL | Razor's Edge       |
+
+*** 代码块
+
+#+begin_src go
+// If an unknown or empty style is provided, AP style is what you get.
+func GetTitleFunc(style string) func(s string) string {
+  switch strings.ToLower(style) {
+  case "go":
+    return strings.Title
+  case "chicago":
+    return transform.NewTitleConverter(transform.ChicagoStyle)
+  default:
+    return transform.NewTitleConverter(transform.APStyle)
+  }
+}
+#+end_src
+
+*** 列表
+
+1. **Nested lists are rarely a good idea.**
+   - You might feel like you are being really "organized" or something but you are just creating a gross shape on the screen that is hard to read.
+   - Nested navigation in UIs is a bad idea too, keep things as flat as possible.
+   - Nesting tons of folders in your source code is also not helpful.
+2. **Since we need to have more items, here's another one.**
+   - I'm not sure if we'll bother styling more than two levels deep.
+   - Two is already too much, three is guaranteed to be a bad idea.
+   - If you nest four levels deep you belong in prison.
+3. **Two items isn't really a list, three is good though.**
+   - Again please don't nest lists if you want people to actually read your content.
+   - Nobody wants to look at this.
+   - I'm upset that we even have to bother styling this.
+
+---
+
+- If you wish to succeed, you should use persistence as your good friend, experience as your reference, prudence as your brother and hope as your sentry.</br>
+  如果你希望成功，当以恒心为良友，以经验为参谋，以谨慎为兄弟，以希望为哨兵。
+- Sometimes one pays most for the things one gets for nothing. </br>
+  有时候一个人为不花钱得到的东西付出的代价最高。
+- Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily. </br>
+  只有有耐心圆满完成简单工作的人，才能够轻而易举的完成困难的事。
+
+***  引用
+
+#+begin_quote
+ 我想：我同赵贵翁有什么仇，同路上的人又有什么仇；只有廿年以前，把古久先生的陈年流水簿子 ⑶，踹了一脚，古久先生很不高兴。赵贵翁虽然不认识他，一定也听到风声，代抱不平；约定路上的人，同我作冤对。但是小孩子呢？那时候，他们还没有出世，何以今天也睁着怪眼睛，似乎怕我，似乎想害我。这真教我怕，教我纳罕而且伤心。
+#+end_quote
+
+
+* DONE shortcode :work:@other:
+CLOSED: [2022-07-16 Sat 23:43]
+:PROPERTIES:
+:EXPORT_FILE_NAME: shortcode
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series '(start)
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :summary shortcode 测试
+:EXPORT_HUGO_SECTION: posts/program/hugo
+:END:
+** Links Card
+#+begin_src markdown
+{{</* link-cards */>}}
+
+{{</* link-card name="優萌初華" desc="琉璃的医学 & 编程笔记" link="https://shoka.lostyu.me"
+image="https://cdn.jsdelivr.net/gh/amehime/shoka@latest/images/avatar.jpg" color="#e9546b" */>}}
+
+{{</* link-card name="優萌初華" desc="琉璃的医学 & 编程笔记" link="https://shoka.lostyu.me" */>}}
+
+{{</* /link-cards */>}}
+#+end_src
+
+#+md: {{< link-cards >}}
+#+md: {{< link-card name="優萌初華" desc="琉璃的医学 & 编程笔记" link="https://shoka.lostyu.me" image="https://cdn.jsdelivr.net/gh/amehime/shoka@latest/images/avatar.jpg" color="#e9546b" >}}
+#+md: {{< link-card name="優萌初華" desc="琉璃的医学 & 编程笔记" link="https://shoka.lostyu.me" >}}
+#+md: {{< /link-cards >}}
+** effects 文字特效
+*bold*
+/italic/
+=verbatim=
+_underline_
++strike-through+
+#+begin_src markdown
+{{</* color "rainbow" "赤橙黄绿青蓝紫" */>}}
+{{</* color "red" "red text" */>}}
+{{</* color "pink" "pink text" */>}}
+{{</* color "orange" "orange text" */>}}
+{{</* color "yellow" "yellow text" */>}}
+{{</* color "green" "green text" */>}}
+{{</* color "aqua" "aqua text" */>}}
+{{</* color "blue" "blue text" */>}}
+{{</* color "purple" "purple text" */>}}
+{{</* color "grey" "grey text" */>}}
+#+end_src
+
+#+begin_export hugo
+{{< color "rainbow" "赤橙黄绿青蓝紫" >}}
+{{< color "red" "red text" >}}
+{{< color "pink" "pink text" >}}
+{{< color "orange" "orange text" >}}
+{{< color "yellow" "yellow text" >}}
+{{< color "green" "green text" >}}
+{{< color "aqua" "aqua text" >}}
+{{< color "blue" "blue text" >}}
+{{< color "purple" "purple text" >}}
+{{< color "grey" "grey text" >}}
+#+end_export
+
+** spoiler 隐藏文字
+#+begin_src markdown
+{{</* hidden-text "Hide text" */>}}
+{{</* hidden-text "Hide text" blur */>}}
+#+end_src
+
+#+begin_export hugo
+{{< hidden-text "Hide text" >}} ： 鼠标滑过显示内容
+
+{{< hidden-text "Hide text" blur >}} ： 选中文字显示内容
+#+end_export
+
+** label 标签块
+#+begin_src markdown
+This is a {{</* tag default "default" */>}}
+This is a {{</* tag primary "primary" */>}}
+This is a {{</* tag info "info" */>}}
+This is a {{</* tag success ":heavy_check_mark: success" */>}}
+This is a {{</* tag warning "warning" */>}}
+This is a {{</* tag danger ":broken_heart: danger" */>}}
+#+end_src
+
+#+begin_export hugo
+{{< tag default "default" >}}
+<br/>
+{{< tag primary "primary" >}}
+<br/>
+{{< tag info "info" >}}
+<br/>
+{{< tag success ":heavy_check_mark: success" >}}
+<br/>
+{{< tag warning "warning" >}}
+<br/>
+{{< tag danger ":broken_heart: danger" >}}
+<br/>
+#+end_export
+
+** note 提醒块
+#+begin_src markdown
+{{</* notice default */>}}
+default
+{{</* /notice */>}}
+
+{{</* notice primary */>}}
+primary
+{{</* /notice */>}}
+
+{{</* notice info */>}}
+info
+{{</* /notice */>}}
+
+{{</* notice success */>}}
+success
+{{</* /notice */>}}
+
+{{</* notice warning */>}}
+warning
+{{</* /notice */>}}
+
+{{</* notice danger */>}}
+danger
+{{</* /notice */>}}
+
+{{</* notice no-icon */>}}
+no icon
+{{</* /notice */>}}
+#+end_src
+
+#+begin_export hugo
+{{< notice default >}}
+default
+{{< /notice >}}
+
+{{< notice primary >}}
+primary
+{{< /notice >}}
+
+{{< notice info >}}
+info
+{{< /notice >}}
+
+{{< notice warning >}}
+warning
+{{< /notice >}}
+
+{{< notice danger >}}
+danger
+{{< /notice >}}
+
+{{< notice danger no-icon >}}
+no icon
+{{< /notice >}}
+#+end_export
+** tab 标签卡
+#+begin_src markdown
+{{</* tab-panel name="中文" id=tab1 */>}}
+百合花（学名：Lilium）通称百合花，是百合目百合科的一属，为多年生草本球根植物，属内物种繁多，经常作为观赏植物。主要分布在亚洲东部、欧洲、北美洲等北半球温带地区，全球已发现有至少96个品种，其中5种产于台湾。近年更有不少经过人工杂交而产生的新品种，如OT百合、东方型百合、玫瑰百合等。百合属对猫来说有剧毒。
+{{</* /tab-panel */>}}
+
+{{</* tab-panel name="Español" id=tab1 */>}}
+Las especies de Lilium, comúnmente llamadas azucenas o lirios, constituyen un género con alrededor de 110 integrantes que se incluye dentro de la familia de las liliáceas. Los lirios son herbáceas perennes de tallos erectos con numerosas hojas alternas, lineares a lance balas. Crecen a partir de bulbos formados por capas de escamas carnosas sin túnica.
+{{</* /tab-panel */>}}
+#+end_src
+
+#+begin_export hugo
+{{< tab-panel name="中文" id=tab1 >}}
+百合花（学名：Lilium）通称百合花，是百合目百合科的一属，为多年生草本球根植物，属内物种繁多，经常作为观赏植物。主要分布在亚洲东部、欧洲、北美洲等北半球温带地区，全球已发现有至少96个品种，其中5种产于台湾。近年更有不少经过人工杂交而产生的新品种，如OT百合、东方型百合、玫瑰百合等。百合属对猫来说有剧毒。
+{{< /tab-panel >}}
+
+{{< tab-panel name="Español" id=tab1 >}}
+Las especies de Lilium, comúnmente llamadas azucenas o lirios, constituyen un género con alrededor de 110 integrantes que se incluye dentro de la familia de las liliáceas. Los lirios son herbáceas perennes de tallos erectos con numerosas hojas alternas, lineares a lance balas. Crecen a partir de bulbos formados por capas de escamas carnosas sin túnica.
+{{< /tab-panel >}}
+#+end_export
+
+** collapse 折叠块
+#+begin_src markdown
+{{</* accordion primary primary */>}}
+accordion
+{{</* /accordion */>}}
+#+end_src
+
+#+begin_export hugo
+{{< accordion primary primary >}}
+accordion
+{{< /accordion >}}
+#+end_export
+** media 多媒体
+
+#+begin_export hugo
+{{< video name="test" >}}
+#+end_export
+
+* DONE sticky post :tennisclub:
+CLOSED: [2022-07-22 Fri 21:30]
+:PROPERTIES:
+:EXPORT_FILE_NAME: sticky-post
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series '(start)
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :summary 测试置顶文章
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :sticky true
+:EXPORT_HUGO_SECTION: posts/other
+:END:
+测试一下
+这是一篇置顶文章
+
+* DONE sticky post2 :tennisclub:
+CLOSED: [2022-07-23 Sat 22:57]
+:PROPERTIES:
+:EXPORT_FILE_NAME: sticky-post2
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series '(start)
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :summary another 测试置顶文章
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :sticky true
+:EXPORT_HUGO_SECTION: posts/other
+:END:
+测试一下
+这是另一篇置顶文章
+
+* DONE test for remote url cover post
+CLOSED: [2022-07-23 Sat 21:07]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: remote_cover
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series '(start)
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover https://tva2.sinaimg.cn/large/6833939bly1giciub8ja1j20zk0m81ky.jpg
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :summary 测试文章封面使用 url
+:EXPORT_HUGO_SECTION: posts/other
+:END:
+
+ 封面图片为网络图片
+
+* DONE Gallery Test
+CLOSED: [2022-07-23 Sat 23:24]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: gallery_test
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series '(start)
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover iku.png
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :summary 相册功能测试
+:EXPORT_HUGO_SECTION: posts/other
+:END:
+Gallery 测试
+
+下面是使用了 shortcode gallery 包裹的效果
+#+begin_src markdown
+{{ </*gallery*/> }}
+![](iku.png)
+![](lilan.jpeg)
+![](https://tva2.sinaimg.cn/large/6833939bly1giciub8ja1j20zk0m81ky.jpg)
+{{ </*/gallery*/> }}
+#+end_src
+#+md: {{< gallery >}}
+[[file:iku.png]]
+[[file:lilan.jpeg]]
+[[https://tva2.sinaimg.cn/large/6833939bly1giciub8ja1j20zk0m81ky.jpg]]
+#+md: {{< /gallery >}}
+下面是单张图片测试
+[[file:iku.png]]
+[[file:lilan.jpeg]]
+[[https://tva2.sinaimg.cn/large/6833939bly1giciub8ja1j20zk0m81ky.jpg]]
