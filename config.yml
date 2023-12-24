@@ -5,7 +5,7 @@ title: title
 theme: "hugo-theme-shoka"
 
 author:
-  name: birdgg
+  name: sekaimoe
 
 enableEmoji: true
 
@@ -105,9 +105,9 @@ outputFormats:
     notAlternative: true
 
 params:
-  alternate: Alternate
-  subtitle: Subtitle
-  description: Description
+  alternate: Test Page
+  subtitle: Hello,World!
+  description: 「冲破云霄，撕裂劲风，把我引向那动荡的永恒吧。」
   statics: /
   # when your site url is like 'http://site.com/child', set root as '/child/'
   root: /
@@ -124,7 +124,7 @@ params:
     recent_comments: true
 
   reward:
-    enable: true
+    enable: false
     account:
       wechatpay: wechatpay.jpg
       alipay: alipay.png
